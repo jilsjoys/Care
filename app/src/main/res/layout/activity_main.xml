@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reativelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorPrimary">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/main_page_toolbar"
+        layout="@layout/app_bar_layout"
+        ></include>
+
+    <ProgressBar
+        android:id="@+id/progressbar_timerview"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal|bottom"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circleshape2_timerview" />
+
+    <TextView
+        android:id="@+id/textView_timerview_time"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:alpha="0.6"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressbar1_timerview"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal|center"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circleshape1_timerview"
+        android:visibility="gone" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="35dp"
+        android:id="@+id/tes"
+        android:layout_marginTop="90dp"
+        android:text="Hold your breathe for 10s."
+        android:textColor="@android:color/white"
+
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/button_timerview_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search_layout"
+        android:text="  START  "
+        android:textAllCaps="false"
+        android:layout_below="@id/tes"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:onClick="start"/>
+
+
+    <Button
+        android:id="@+id/button_timerview_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search_layout"
+        android:onClick="stop"
+        android:text="  STOP  "
+        android:layout_below="@id/tes"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+       android:background="@color/transparent"
+        android:text="next page"
+        android:textAllCaps="false"
+        android:textColor="#1A818E"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:visibility="invisible" />
+
+
+    <TextView
+        android:id="@+id/are_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_timerview_time"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginRight="40dp"
+        android:text="Did you feel difficulty in breathing or experience shortness of breath ?"
+        android:textColor="@android:color/white"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+    <RadioGroup
+        android:id="@+id/radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/are_you"
+        android:visibility="invisible">
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes         "
+            android:checked="true"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:theme="@style/RadioButtonStyle"
+            android:onClick="checkButton"
+            ></RadioButton>
+
+        <RadioButton
+            android:id="@+id/not"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:theme="@style/RadioButtonStyle"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:onClick="checkButton"
+            ></RadioButton>
+
+    </RadioGroup>
+
+</RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationView"
+        android:layout_gravity ="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/header_layout"
+        android:background="#FD19282C"
+        app:itemTextColor="#ffffff">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
